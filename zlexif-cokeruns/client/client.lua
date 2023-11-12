@@ -1,6 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
--- NPC Creation
 Citizen.CreateThread(function()
     RequestModel(GetHashKey(Config.NPC.model))
     while not HasModelLoaded(GetHashKey(Config.NPC.model)) do
@@ -13,7 +12,6 @@ Citizen.CreateThread(function()
     SetBlockingOfNonTemporaryEvents(npc, true)
 end)
 
--- Setup qb-target interaction with NPC
 exports['qb-target']:AddTargetModel(GetHashKey(Config.NPC.model), {
     options = {
         {
@@ -32,7 +30,6 @@ exports['qb-target']:AddTargetModel(GetHashKey(Config.NPC.model), {
 
 
 
--- Setup PolyZone
 local dealZone = CircleZone:Create(Config.DealZone.coords, Config.DealZone.radius, {
     name = "dealzone",
     debugPoly = Config.Debug
@@ -40,7 +37,6 @@ local dealZone = CircleZone:Create(Config.DealZone.coords, Config.DealZone.radiu
 
 
 
--- Burner Phone Use
 RegisterNetEvent('zlexif-cokeruns:useBurnerPhone')
 AddEventHandler('zlexif-cokeruns:useBurnerPhone', function()
     local playerCoords = GetEntityCoords(PlayerPedId())
@@ -51,9 +47,9 @@ AddEventHandler('zlexif-cokeruns:useBurnerPhone', function()
             disableCarMovement = false,
             disableMouse = false,
             disableCombat = true,
-        }, {}, {}, {}, function() -- On Complete
-            local pedCoords = playerCoords + vector3(5, 5, 0)  -- Adjust as needed
-            local pedModel = GetHashKey("a_m_m_skater_01")  -- Example ped model, change as needed
+        }, {}, {}, {}, function() 
+            local pedCoords = playerCoords + vector3(5, 5, 0)  
+            local pedModel = GetHashKey("a_m_m_skater_01")  
 
             RequestModel(pedModel)
             while not HasModelLoaded(pedModel) do
@@ -63,9 +59,9 @@ AddEventHandler('zlexif-cokeruns:useBurnerPhone', function()
             local dealerPed = CreatePed(4, pedModel, pedCoords.x, pedCoords.y, pedCoords.z, 0, true, false)
             TaskGoToEntity(dealerPed, PlayerPedId(), -1, 2.0, 2.0, 1073741824, 0)
 
-            Citizen.Wait(5000)  -- Wait for ped to walk to player
+            Citizen.Wait(5000) 
 
-            TriggerServerEvent('zlexif-cokeruns:completeDeal')  -- Give item
+            TriggerServerEvent('zlexif-cokeruns:completeDeal')  
 
             SetEntityAsNoLongerNeeded(dealerPed)
             DeletePed(dealerPed)
@@ -76,10 +72,8 @@ AddEventHandler('zlexif-cokeruns:useBurnerPhone', function()
 end)
 
 
--- Event for obtaining an order
 RegisterNetEvent('zlexif-cokeruns:getOrder')
 AddEventHandler('zlexif-cokeruns:getOrder', function()
-    print("Client: getOrder event triggered")  -- Debug print
     TriggerServerEvent('zlexif-cokeruns:getOrder')
 end)
 
