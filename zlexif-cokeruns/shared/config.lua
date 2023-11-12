@@ -2,8 +2,8 @@ Config = {}
 
 -- NPC Configuration
 Config.NPC = {
-    coords = vector3(5011.93, -5754.0, 27.9), -- Replace with actual coordinates
-    heading = 62.52,  -- Replace with actual heading
+    coords = vector3(5011.93, -5754.0, 27.9), -- Replace with desired coordinates
+    heading = 62.52,  -- Replace with desired heading
     model = 'a_m_m_farmer_01'  -- Replace with the model you want for the NPC
 }
 
@@ -19,9 +19,9 @@ Config.DealDuration = 16000 -- Duration for discussing deal in milliseconds (16 
 
 -- Deal Zone Configuration
 Config.DealZone = {
-    coords = vector3(5256.09, -5431.41, 64.97),  -- Replace with the center of the circle zone
-    radius = 100.0,  -- Replace with the radius of the circle zone
-    debugPoly = true  -- Set to true to see the zone during development
+    coords = vector3(5256.09, -5431.41, 64.97),  -- Replace with the center of the circle zone you desire
+    radius = 100.0,  -- Replace with the radius of the circle zone you desire
+    debugPoly = false  -- Set to true to see the zone during development
 }
 
 
