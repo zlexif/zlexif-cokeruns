@@ -5,6 +5,10 @@ qb-core --> shared --> items.lua
 -- BURNER PHONE
 ['burnerphone'] 		  	     = {['name'] = 'burnerphone', 			   	['label'] = 'Burner Phone',             	['weight'] = 100, 		['type'] = 'item', 		['image'] = 'burnerphone.png', 	    ['unique'] = true, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Shhh, Theyre always listening'},
 ```
+qb-inventory --> html -->images
+```
+drag and drop the burner phone image from the images folder
+```
 - Drag and drop into your resources folder.
 - Go to server.cfg
 - paste this in after [standalone] ***ensure zlexif-cokeruns***
