@@ -3,7 +3,7 @@
 qb-core --> shared --> items.lua
 ```
 -- BURNER PHONE
-['burnerphone'] 		  	     = {['name'] = 'burnerphone', 			   	['label'] = 'Burner Phone',             	['weight'] = 100, 		['type'] = 'item', 		['image'] = 'outfitbag.png', 	    ['unique'] = true, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Shhh, Theyre always listening'},
+['burnerphone'] 		  	     = {['name'] = 'burnerphone', 			   	['label'] = 'Burner Phone',             	['weight'] = 100, 		['type'] = 'item', 		['image'] = 'burnerphone.png', 	    ['unique'] = true, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Shhh, Theyre always listening'},
 ```
 - Drag and drop into your resources folder.
 - Go to server.cfg
